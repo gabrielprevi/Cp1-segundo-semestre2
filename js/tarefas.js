@@ -8,17 +8,19 @@ const gerarListaImportanciaBtn = document.getElementById('gerar-lista-importanci
 
 const tarefas = [];
 
-adicionarBtn.addEventListener('click', () => {
+adicionarBtn.addEventListener('click', (adicionar) => {
   const descricao = descricaoInput.value;
   const autor = autorInput.value;
   const departamento = departamentoInput.value;
   const importancia = importanciaInput.value;
+
 
   const novaTarefa = {
     descricao,
     autor,
     departamento,
     importancia
+  
   };
 
   tarefas.push(novaTarefa);
@@ -28,6 +30,7 @@ adicionarBtn.addEventListener('click', () => {
   autorInput.value = '';
   departamentoInput.value = '';
   importanciaInput.value = '';
+  return adicionar;
 });
 
 function renderizarTarefas() {
